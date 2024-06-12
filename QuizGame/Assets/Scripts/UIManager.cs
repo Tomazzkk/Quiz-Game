@@ -17,6 +17,16 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]Button[] answersButtons;
     [SerializeField]TextMeshProUGUI questionText;
+    [SerializeField] GameObject MenuWindow;
+    [SerializeField] Button StartButton;
+    [SerializeField] TMP_Dropdown dificultyDropDown, themeDropdown;
+
+
+    private void Start()
+    {
+        StartButton.onClick.AddListener(()
+        => GameManager.Instance.StartGame(dificultyDropDown.value, themeDropdown.value));
+    }
 
     public void UpdateQuestion(Quiz quizSelected)
     {
@@ -26,7 +36,11 @@ public class UIManager : MonoBehaviour
         {
             answersButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = quizSelected.Answers[i];
         }
-    }
 
+    }
+    public void SetMenu(bool active)
+    {
+        MenuWindow.SetActive(active);    
+    }
 
 }
