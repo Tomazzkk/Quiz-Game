@@ -6,9 +6,18 @@ public class QuizManager : MonoBehaviour
 {
     [SerializeField] private Quiz[] quizList;
     [SerializeField] private Quiz currentQuiz;
-
     [SerializeField] Quiz.Dificulty dificulty;
     [SerializeField] Quiz.Theme theme;
+    int rightAnswers;
+    #region Singleton
+    public static QuizManager instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+    #endregion
+
 
     public void SelectQuiz(Quiz.Theme themeSelected, Quiz.Dificulty dificultySelected)
     {
@@ -24,5 +33,17 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-
+    public void CheckAnswer(int answerSelected)
+    {
+        if(answerSelected == currentQuiz.CorrectAnswer)
+        {
+            // Incremetnar o valor de RightAnswers
+            rightAnswers++;
+        }
+        else
+        {
+            GameManager.Instance.GameOver();
+        }
+        UIManager.instance.HighlightButton(currentQuiz.CorrectAnswer, answerSelected);
+    }
 }

@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72697466b04e3cb4f96a1ee0f15a9685, type: 3}
   m_Name: Pergunta 1
   m_EditorClassIdentifier: 
-  question: 
+  question: Miguel da o...
   answers:
-  - 
-  - 
-  - 
-  - 
-  correctAnswer: 0
+  - Tchau
+  - Boa noite
+  - Cu
+  - Soco na boca da propria mae
+  correctAnswer: 2
   theme: 0
   dificulty: 0

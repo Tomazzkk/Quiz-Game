@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72697466b04e3cb4f96a1ee0f15a9685, type: 3}
   m_Name: Pergunta 2
   m_EditorClassIdentifier: 
-  question: 
+  question: "Joao \xE9..."
   answers:
-  - 
-  - 
-  - 
-  - 
-  correctAnswer: 0
+  - Gay
+  - Agressivo
+  - Perturbado
+  - Viado
+  correctAnswer: 1
   theme: 0
   dificulty: 0
